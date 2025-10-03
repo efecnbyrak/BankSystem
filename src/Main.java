@@ -122,12 +122,40 @@ public class Main {
 
     }
     public static void deposit(){
-        //BURADAN DEVAM EDİCEM
+        System.out.println("Your Balance : " + totalValue);
+        System.out.print("Enter the amount you wish to deposit : \n-> ");
+        int depositValue = in.nextInt();
+        int lastBalance = totalValue + depositValue;
+        System.out.println("The process was completed successfully.");
+        System.out.println("New Balance is " + lastBalance);
+        loginMade();
     }
     public static void balanceViewing(){
-
+        System.out.println("Your Balance : " + totalValue);
+        loginMade();
     }
     public static void accountDeletion(){
-
+        System.out.println("Are you sure you want to delete your account?");
+        System.out.println("1 -> Yes");
+        System.out.println("2 -> No");
+        byte choose = in.nextByte();
+        switch (choose){
+            case 1 -> {
+                System.out.println("Please Enter Your SSN : ");
+                long SSN = in.nextLong();
+                boolean deleted = userController.deleteByUserSsn(SSN);
+                if (deleted) {
+                    System.out.println("Account Deleted Successfully.");
+                } else {
+                    System.out.println("No account found with this SSN.");
+                    loginMade();
+                }
+            }
+            case 2 -> {
+                System.out.println("You are being redirected to the home page.");
+                loginMade();
+            }
+            default -> System.out.println("Invalid choice.");
+        }
     }
 }

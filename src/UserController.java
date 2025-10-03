@@ -19,7 +19,12 @@ public class UserController {
         }
         return null;
     }
-    public void deleteByUserSsn(long ssn){
-        userList.remove(ssn);
+    public boolean deleteByUserSsn(long ssn){
+        User user = findBySsn(ssn);
+        if(user != null){
+            userList.remove(user);
+            return true;
+        }
+        return false;
     }
 }
