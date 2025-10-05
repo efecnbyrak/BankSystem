@@ -12,7 +12,7 @@ Konsol üzerinden kullanıcı işlemleri yapılabiliyor.
 
 ## Kullanılan Teknolojiler
 - Java (Nesne Yönelimli Programlama mantığıyla)
-- Java Version = 21
+- Java Version = 24
 - IntelliJ IDEA (geliştirme ortamı)
 
 ## Çalıştırma
